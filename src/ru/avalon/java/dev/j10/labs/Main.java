@@ -12,7 +12,16 @@ public class Main {
          * чтобы он содержал 20 строк, расположенных не
          * по порядку.
          */
-	    String[] strings = null;
+        
+        
+        //cоздаем массив и заполняем его строками 
+	    String[] strings = new String[20];
+            GenerateRandomChars gen = new GenerateRandomChars();
+            for(int i = 0; i < strings.length; i++){
+            strings[i] = gen.generateRandomChars("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", 10);
+            }
+            for (String s : strings)
+            System.out.println(s); 
 
 	    /*
 	     * TODO(Студент): Проинициализируйте массив persons
@@ -22,7 +31,15 @@ public class Main {
 	     * 2. Проинициализируйте массив persons 20
 	     *    экземплярыми созданного класса.
 	     */
-	    Person[] persons = null;
+            
+            //заполняем массив Person - с именем и ДР
+	    Person[] persons = new PersonClass[20];
+            for (int i = 0; i < persons.length; i++){
+                 persons[i] = GenerateRandomPerson.generatePerson();
+            }
+            for (Person s1 : persons)
+            System.out.println(s1.getName() + ", "  + s1.getBirthDate()); 
+            
 
         /*
          * TODO(Студент): Проинициализируйте переменную sort
@@ -32,7 +49,7 @@ public class Main {
          * 2. Проинициализируйте переменную sort экземпляром
          *    созданного класса.
          */
-        Sort sort = null;
+        Sort sort = new SortClass();
 
         /*
          * TODO(Студент): Проинициализируйте переменную comparator
@@ -44,7 +61,7 @@ public class Main {
          * 2. Проинициализируйте переменную comparator
          *    экземпляром созданного класса.
          */
-        Comparator comparator = null;
+        Comparator comparator = new ComparatorClass();
 
         /*
          * TODO(Студент): Отсортируйте массив persons по возрастанию
@@ -57,6 +74,8 @@ public class Main {
          *    что массив отсортирован по возрастанию.
          */
         sort.sort(persons);
+        
+     
 
         /*
          * TODO(Студент): Отсортируйте массив strings по возрастанию
@@ -69,6 +88,7 @@ public class Main {
          *    что массив отсортирован по возрастанию.
          */
         sort.sort(strings);
+        ;
 
         /*
          * TODO(Студент): Отсортируйте массив strings по убыванию
